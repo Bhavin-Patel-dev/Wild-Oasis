@@ -77,7 +77,14 @@ npm install
 npm run dev
 ```
 
-Then open your browser at `http://localhost:5173` (or whatever port Vite or dev server uses).
+Once the setup is complete, open your browser at ```http://localhost:5173``` (or whatever port Vite or dev server uses).
+
+✅ To explore the app, log in with these demo credentials:
+
+```Email: joey.tribbiani@yahoo.com```
+
+```Password: joeytribbiani```
+
 
 ---
 
