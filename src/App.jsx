@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools/production";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 
 import GlobalStyle from "./styles/GlobalStyle";
@@ -18,18 +18,19 @@ import Checkin from "./pages/Checkin";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import { DarkModeProvider } from "./context/DarkModeContext";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 0,
-    },
-  },
-});
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 0,
+      },
+    },
+  });
+
   return (
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
-        {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
+        <ReactQueryDevtools initialIsOpen={false} />
         <GlobalStyle />
         <BrowserRouter>
           <Routes>
